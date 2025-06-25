@@ -415,5 +415,149 @@ public class Pattern {
         System.out.println();
 
         // Pattern 23
+        n = 3;
+        
+
+        // Pattern 24
+        n = 10;
+        for(int i = 0; i < n; i++) {
+            for(int j = 0; j < n; j++) {
+                if(j == 0 || j == n - 1 || i == j || i + j == n - 1) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+
+        // Pattern 25
+        n = 5;
+        for(int i = 0; i < n; i++) {
+            for(int j = 0; j < n - i - 1; j++) {
+                System.out.print(" ");
+            }
+            for(int j = 0; j < n; j++) {
+                if(i == 0 || i == n - 1 || j == 0 || j == n - 1) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+
+        // Pattern 26
+        n = 6;
+        for(int i = 1; i <= n; i++) {
+            for(int j = 1; j <= n - i + 1; j++) {
+                System.out.print(i + " ");
+            }
+            System.out.println();
+        }
+
+        // Pattern 27
+        rows = 4;
+        int num = 1;
+        int max = rows * (rows + 1); // 4 * 5 = 20
+        int end = max;
+
+        for (int i = 0; i < rows; i++) {
+            // Print leading spaces
+            for (int s = 0; s < i * 2; s++) {
+                System.out.print(" ");
+            }
+
+            int count = rows - i; // Numbers to print on each side
+
+            // Print increasing numbers (left side)
+            for (int j = 0; j < count; j++) {
+                System.out.printf("%2d", num++);
+            }
+            System.out.print(" ");
+
+            // Print decreasing numbers (right side)
+            end -= count;
+            for (int j = 0; j < count; j++) {
+                System.out.printf("%2d ", end + j + 1);
+            }
+
+            System.out.println();
+        }
+
+        // Pattern 28
+        n = 5;
+        for(int i = 0; i < n; i++) {
+            for(int j = 0; j < n - i - 1; j++) {
+                System.out.print(" ");
+            }
+            for(int j = 0; j <= i; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+        for(int i = 0; i < n - 1; i++) {
+            for(int j = 0; j <= i; j++) {
+                System.out.print(" ");
+            }
+            for(int j = 0; j < n - i - 1; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+
+        // Pattern 30
+        n = 5;
+        for(int i = 1; i <= 5; i++) {
+            for(int j = 1; j <= n - i; j++) {
+                System.out.print("  ");
+            }
+            for(int j = i; j >= 1; j--) {
+                System.out.print(j + " ");
+            }
+            for(int j = 2; j <= i; j++) {
+                System.out.print(j + " ");
+            }
+            System.out.println();
+        }
+        System.out.println();
+
+        // Pattern 31
+        n = 4;
+        int s = 2 * n - 1;
+        int[][] pat = new int[s][s];
+        int rstart = 0, rend = s - 1;
+        int cstart = 0, cend = s - 1;
+        num = 4;
+        while(num != 0) {
+            for(int i = 0; i < s; i++) {
+                for(int j = 0; j < s; j++) {
+                    if(i >= rstart && i <= rend && j >= cstart && j <= cend) {
+                        pat[i][j] = num;
+                    }
+                }
+            }
+            rstart++;
+            rend--;
+            cstart++;
+            cend--;
+            num--;
+        }
+        for(int i = 0; i < s; i++) {
+            for(int j = 0; j < s; j++) {
+                System.out.print(pat[i][j] + " ");
+            }
+            System.out.println();
+        }
+        
+
+        // Pattern 31
+        n = 4;
+        s = 2 * n - 1;
+        for(int i = 0; i < s; i++) {
+            for(int j = 0; j < s; j++) {
+                
+            }
+        }
     }
 }
