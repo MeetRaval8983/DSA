@@ -6,7 +6,16 @@ public class Basic_Maths {
         System.out.println(armstrong(153));
         divisors(36);
         System.out.println("\nPrime number: " + isPrime(13));
-        
+        int a = 24, b = 36;
+        int gcd = 1;
+        for(int i = 2; i <= Math.min(a,b); i++) {
+            if(a % i == 0 && b % i == 0) {
+                gcd = i;
+            }
+        }
+        System.out.println("GCD: " + gcd);
+        System.out.println("GCD: " + gcdnum(24, 36));
+        System.out.println("LCM: " + lcm(4, 6));
     }
     private static int countDigit(int n) {
         int c = 0;
@@ -54,5 +63,23 @@ public class Basic_Maths {
             }
         }
         return c == 2;
+    }
+    private static int gcdnum(int a, int b) {
+        while(a > 0 && b > 0) {
+            if(a > b) a = a % b;
+            else b = b % a;
+        }
+        if(a == 0) return b;
+        else return a;
+    }
+    private static int lcm(int a, int b) {
+        // int i = Math.max(a,b);
+        // while(true) {
+        //     if(i % a == 0 && i % b == 0) {
+        //         return i;
+        //     }
+        //     i++;
+        // }
+        return (a * b) / gcdnum(a, b);
     }
 }
