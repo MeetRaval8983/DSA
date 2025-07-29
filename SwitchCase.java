@@ -4,12 +4,12 @@ public class SwitchCase {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String fruit = sc.next();
-        switch(fruit) {
-            case "Mango" -> System.out.println("King of fruits");
-            case "Apple" -> System.out.println("King of fruits");
-            case "Orange" -> System.out.println("King of fruits");
-            default -> System.out.println("Invalid fruit");
-        }
+        // switch(fruit) {
+        //     case "Mango" -> System.out.println("King of fruits");
+        //     case "Apple" -> System.out.println("King of fruits");
+        //     case "Orange" -> System.out.println("King of fruits");
+        //     default -> System.out.println("Invalid fruit");
+        // }
 
         int day = sc.nextInt();
         switch(day) {
@@ -26,10 +26,11 @@ public class SwitchCase {
                 break;
         }
 
-        switch(day) {
-            case 1, 2, 3, 4, 5 -> System.out.println("Weekday");
-            case 6, 7 -> System.out.println("Weekend");
-        }
+
+        // switch(day) {
+        //     case 1, 2, 3, 4, 5 -> System.out.println("Weekday");
+        //     case 6, 7 -> System.out.println("Weekend");
+        // }
 
     }
 }
