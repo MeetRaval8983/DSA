@@ -1,5 +1,3 @@
-package LinkedList;
-
 public class LL {
     private Node head;
     private Node tail;
@@ -47,6 +45,47 @@ public class LL {
         temp.next = node;
         size++;
     }
+
+    public int deleteFirst() {
+        int val = head.data;
+        head = head.next;
+        if(head == null) {
+            tail = null;
+        }
+        return val;
+    }
+
+    public int deleteLast() {
+        if(size < 1) {
+            return deleteFirst();
+        }
+        Node temp = head;
+        while(temp.next != tail) {
+            temp = temp.next;
+        }
+        int val = tail.data;
+        temp.next = null;
+        tail = temp;
+        size--;
+        return val;
+    }
+
+    public int delete(int index) {
+        if(index == 0) {
+            return deleteFirst();
+        }
+        if(index == size - 1) {
+            return deleteLast();
+        }
+        Node temp = head;
+        for(int i = 1; i < index; i++) {
+            temp = temp.next;
+        }
+        int val = temp.next.data;
+        temp.next = temp.next.next;
+        size--;
+        return val;
+    }   
     
     public void display() {
         Node temp = head;
