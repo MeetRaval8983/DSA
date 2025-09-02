@@ -47,16 +47,21 @@ public class LL {
     }
 
     public int deleteFirst() {
+        if (head == null) {
+            System.out.println("List is empty");
+            return -1; // Or throw an exception
+        }
         int val = head.data;
         head = head.next;
         if(head == null) {
             tail = null;
         }
+        size--;
         return val;
     }
 
     public int deleteLast() {
-        if(size < 1) {
+        if(size <= 1) {
             return deleteFirst();
         }
         Node temp = head;
@@ -64,8 +69,8 @@ public class LL {
             temp = temp.next;
         }
         int val = tail.data;
-        temp.next = null;
         tail = temp;
+        tail.next = null;
         size--;
         return val;
     }
@@ -94,6 +99,18 @@ public class LL {
             temp = temp.next;
         }
         System.out.println("NULL");
+    }
+
+    // New method to find a node
+    public Node find(int val) {
+        Node node = head;
+        while(node != null) {
+            if(node.data == val) {
+                return node;
+            }
+            node = node.next;
+        }
+        return null;
     }
 
     private class Node {
